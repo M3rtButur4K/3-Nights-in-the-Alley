@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("States")]
+    string sampletext; //does nothing just so that the editor shows the "States" part - M3rt
+    [SerializeField] public enum GameState
+    {
+        IsPlaying,
+        IsPaused,
+        IsDead,
+    }
+    [SerializeField] public GameState CurrentState;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +24,23 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void SwitchStates()
+    {
+
+    }
+
+    void IsPlaying()
+    {
+
+    }
+    void IsPaused()
+    {
+
+    }
+    void IsDead()
+    {
+
     }
 }

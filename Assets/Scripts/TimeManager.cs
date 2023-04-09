@@ -27,7 +27,7 @@ public class TimeManager : MonoBehaviour
         CurrentHour = TimeSprites[HourNumber];
     }
 
-    void Update()
+    void FixedUpdate()
     {
         CurrentHour = TimeSprites[HourNumber];
         CurrentHour.SetActive(true);
@@ -60,9 +60,9 @@ public class TimeManager : MonoBehaviour
     {
         HourNumber = Number;
 
-        foreach (GameObject camera in TimeSprites)
+        foreach (GameObject sprite in TimeSprites)
         {
-            camera.SetActive(false);
+            sprite.SetActive(false);
         }
     }
 
