@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This is for the character sprites in the level - M3rt
+/// </summary> 
 public class CharacterSprite : MonoBehaviour
 {
     [SerializeField] CameraManager Camera_Manager;
