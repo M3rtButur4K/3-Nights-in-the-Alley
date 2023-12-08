@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #region Individual States
     void IsPlaying()
     {
         Time.timeScale = 1;
@@ -86,4 +87,12 @@ public class GameManager : MonoBehaviour
         PausePanel.SetActive(false);
         GameOverPanel.SetActive(true);
     }
+    #endregion
+
+    #region Button Functions
+    public void ContinueGame()
+    {
+        CurrentState = GameState.IsPlaying;
+    }
+    #endregion
 }

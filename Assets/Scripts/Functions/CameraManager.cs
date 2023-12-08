@@ -7,36 +7,58 @@ using UnityEngine;
 /// </summary>
 public class CameraManager : MonoBehaviour
 {
+    OfficeManager Office;
+
     [Header("Cameras")]
     [SerializeField] protected GameObject[] CameraScreens;
+    [SerializeField] protected GameObject OfficeCamera;
     [SerializeField] public GameObject CurrentCamera;
     [SerializeField] private int CameraNumber;
-    [SerializeField] public bool IsCameraOn;
+    [SerializeField] protected enum IsCameraOn
+    {
+        Off,
+        On
+    }
+    [SerializeField] protected IsCameraOn CameraState;
 
     [Header("UI")]
     [SerializeField] GameObject OfficeUI;
     [SerializeField] GameObject CameraUI;
 
+    [Header("Sound Effects")]
+    [SerializeField] AudioSource CameraAudio;
+    [SerializeField] AudioClip[] CameraSounds;
 
-    void Awake()
+
+    void Start()
     {
-        CurrentCamera = CameraScreens[CameraNumber];
+        Office = FindObjectOfType<OfficeManager>();
+        CurrentCamera = OfficeCamera;
     }
 
     public void Update()
     {
-        CurrentCamera = CameraScreens[CameraNumber];
         CurrentCamera.SetActive(true);
 
-        if (IsCameraOn == false)
+        switch (CameraState)
         {
-            CameraUI.SetActive(false);
-            OfficeUI.SetActive(true);
-        }
-        if (IsCameraOn == true)
-        {
-            CameraUI.SetActive(true);
-            OfficeUI.SetActive(false);
+            case IsCameraOn.Off:
+                for (int i = 0; i < CameraScreens.Length; i++)
+                {
+                    CameraScreens[i].SetActive(false);
+                }
+                CurrentCamera = OfficeCamera;
+                CameraUI.SetActive(false);
+                OfficeUI.SetActive(true);
+                break;
+            case IsCameraOn.On:
+                OfficeCamera.SetActive(false);
+                CurrentCamera = CameraScreens[CameraNumber];
+                CameraUI.SetActive(true);
+                OfficeUI.SetActive(false);
+                break;
+            default:
+                break;
         }
     }
 
@@ -48,10 +70,25 @@ public class CameraManager : MonoBehaviour
         {
             camera.SetActive(false);
         }
+        CameraAudio.clip = CameraSounds[2];
+        CameraAudio.Play();
     }
 
-    public void SwitchUI(bool CameraSwitch)
+    public void TurnOnCamera()
     {
-        IsCameraOn = CameraSwitch;
+        if(Office.CurrentPower < 2)
+        {
+            Office.AddPower();
+            CameraAudio.clip = CameraSounds[0];
+            CameraAudio.Play();
+            CameraState = IsCameraOn.On;
+        }
+    }
+    public void TurnOffCamera()
+    {
+        Office.RemovePower();
+        CameraAudio.clip = CameraSounds[1];
+        CameraAudio.Play();
+        CameraState = IsCameraOn.Off;
     }
 }
