@@ -13,7 +13,7 @@ public class OfficeManager : MonoBehaviour
     [SerializeField] Slider PowerMeter;
 
     [Header("Sound Effects")]
-    [SerializeField] AudioSource ErrorSound;
+    [SerializeField] public AudioSource ErrorSound;
 
     // Start is called before the first frame update
     void Start()

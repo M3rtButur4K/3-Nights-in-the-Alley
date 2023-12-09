@@ -22,12 +22,12 @@ public class CameraManager : MonoBehaviour
     [SerializeField] protected IsCameraOn CameraState;
 
     [Header("UI")]
-    [SerializeField] GameObject OfficeUI;
-    [SerializeField] GameObject CameraUI;
+    [SerializeField] protected GameObject OfficeUI;
+    [SerializeField] protected GameObject CameraUI;
 
     [Header("Sound Effects")]
-    [SerializeField] AudioSource CameraAudio;
-    [SerializeField] AudioClip[] CameraSounds;
+    [SerializeField] protected AudioSource CameraAudio;
+    [SerializeField] protected AudioClip[] CameraSounds;
 
 
     void Start()
@@ -82,6 +82,10 @@ public class CameraManager : MonoBehaviour
             CameraAudio.clip = CameraSounds[0];
             CameraAudio.Play();
             CameraState = IsCameraOn.On;
+        }
+        else
+        {
+            Office.ErrorSound.Play();
         }
     }
     public void TurnOffCamera()
