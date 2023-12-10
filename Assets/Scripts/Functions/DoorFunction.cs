@@ -11,7 +11,6 @@ public class DoorFunction : MonoBehaviour
 
     [Header("Door")]
     [SerializeField] protected GameObject DoorObject;
-
     [SerializeField] protected enum DoorState
     {
         Closed,
@@ -30,8 +29,6 @@ public class DoorFunction : MonoBehaviour
     [SerializeField] protected AudioSource DoorAudio;
     [SerializeField] protected AudioClip[] DoorSounds;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +38,9 @@ public class DoorFunction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /// <summary>
+        /// This part manages the stuff that happens on the current Door state - M3rt
+        /// </summary>
         switch (CurrentState)
         {
             case DoorState.Closed:
@@ -61,6 +60,9 @@ public class DoorFunction : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Closes the Door (if you're not using all power) - M3rt
+    /// </summary>
     public void CloseDoor()
     {
         if (Office.CurrentPower < 2)
@@ -70,7 +72,14 @@ public class DoorFunction : MonoBehaviour
             DoorAudio.Play();
             CurrentState = DoorState.Closed;
         }
+        else
+        {
+            Office.ErrorSound.Play();
+        }
     }
+    /// <summary>
+    /// Opens the Door - M3rt
+    /// </summary>
     public void OpenDoor()
     {
         Office.RemovePower();

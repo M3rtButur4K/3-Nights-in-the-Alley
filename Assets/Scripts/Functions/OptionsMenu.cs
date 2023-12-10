@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// This is for just the Options Menu - M3rt
+/// This is just for the Options Menu - M3rt
 /// </summary> 
 public class OptionsMenu : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class OptionsMenu : MonoBehaviour
         Screen.fullScreen = FullScreenToggle.isOn;
     }
 
+    // These two Methods are there for changing the Screen Resolution - M3rt
     public void ChangeWidth(int Width)
     {
         ScreenResolution.width = Width;

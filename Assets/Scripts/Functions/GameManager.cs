@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("States")]
-    string sampletext; //does nothing just so that the editor shows the "States" part - M3rt
+    string sampletext; // Is just there so the editor shows the "States" part - M3rt
     [SerializeField] public enum GameState
     {
         IsPlaying,

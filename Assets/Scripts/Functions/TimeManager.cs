@@ -15,8 +15,7 @@ public class TimeManager : MonoBehaviour
 
     [Header("Time")]
     [SerializeField] float HourTime = 80;
-    [SerializeField]
-    int HourNumber;
+    [SerializeField] int HourNumber;
 
     [Header("Sprites")]
     [SerializeField] GameObject[] TimeSprites;

@@ -9,6 +9,11 @@ using UnityEngine.UI;
 /// </summary> 
 public class MenuButtons : MonoBehaviour
 {
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     public void OpenPanel(GameObject panel)
     {
         panel.SetActive(true);

@@ -15,18 +15,15 @@ public class OfficeManager : MonoBehaviour
     [Header("Sound Effects")]
     [SerializeField] public AudioSource ErrorSound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         PowerMeter.value = CurrentPower;
     }
 
+    /// <summary>
+    /// Adds Power (unless its full) - M3rt
+    /// </summary>
     public void AddPower()
     {
         if(CurrentPower < 2)
@@ -38,7 +35,9 @@ public class OfficeManager : MonoBehaviour
             ErrorSound.Play();
         }
     }
-
+    /// <summary>
+    /// Removes Power - M3rt
+    /// </summary>
     public void RemovePower()
     {
         CurrentPower -= 1;

@@ -40,6 +40,9 @@ public class CameraManager : MonoBehaviour
     {
         CurrentCamera.SetActive(true);
 
+        /// <summary>
+        /// This part manages the stuff that happens on the current Camera state - M3rt
+        /// </summary>
         switch (CameraState)
         {
             case IsCameraOn.Off:
@@ -62,6 +65,9 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Switches the currently used Camera in the Camera System - M3rt
+    /// </summary>
     public void SwitchCamera(int Number)
     {
         CameraNumber = Number;
@@ -74,6 +80,9 @@ public class CameraManager : MonoBehaviour
         CameraAudio.Play();
     }
 
+    /// <summary>
+    /// Turns on the Camera (unless the power is full) - M3rt
+    /// </summary>
     public void TurnOnCamera()
     {
         if(Office.CurrentPower < 2)
@@ -88,6 +97,9 @@ public class CameraManager : MonoBehaviour
             Office.ErrorSound.Play();
         }
     }
+    /// <summary>
+    /// Turns off the Camera - M3rt
+    /// </summary>
     public void TurnOffCamera()
     {
         Office.RemovePower();
