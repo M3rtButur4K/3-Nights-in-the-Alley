@@ -5,10 +5,12 @@ using UnityEngine;
 /// <summary>
 /// This is for BLR/Afton's AI - M3rt
 /// </summary>
-public class RandomCharacter : MonoBehaviour
+public class RandomCharacter : EnemyStats
 {
+
+    [Header("Ability")]
     [SerializeField] protected BreakerRoom Breaker;
-    GameManager Manager;
+    [SerializeField] protected float SlowdownSpeed;
 
     [Header("Audio")]
     [SerializeField] protected AudioSource TestMusic;
@@ -23,6 +25,21 @@ public class RandomCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        BreakerState();
+
+        if (TestMusic.time >= 25)
+        {
+            KillPlayer();
+        }
+        if (Manager.CurrentState == GameManager.GameState.IsBeaten || IsActive == false)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void BreakerState()
+    {
         if (Breaker.IsPowerOn == true)
         {
             GoBack();
@@ -33,34 +50,26 @@ public class RandomCharacter : MonoBehaviour
         }
         if (Breaker.IsPowerOn == false && Manager.CurrentState == GameManager.GameState.IsPaused)
         {
-            TestMusic.Stop();
-        }
-
-        if (TestMusic.time >= 12)
-        {
-            KillPlayer();
+            TestMusic.Pause();
         }
     }
 
     void GoBack()
     {
-        TestMusic.volume = 0;
-        TestMusic.Stop();
+        //TestMusic.volume = 0;
+        TestMusic.Pause();
+        if (TestMusic.time > 0)
+        {
+            TestMusic.time -= SlowdownSpeed * AggressionLevel * Time.deltaTime;
+        }
     }
 
     void PlayMusic()
     {
         if(!TestMusic.isPlaying)
         {
-            TestMusic.Play();
+            TestMusic.PlayScheduled(TestMusic.time);
         }
-        TestMusic.volume += 0.1f * Time.deltaTime;
-    }
-
-    void KillPlayer()
-    {
-        GameManager manager = FindObjectOfType<GameManager>();
-        manager.CurrentState = GameManager.GameState.IsDead;
-        this.gameObject.SetActive(false);
+        //TestMusic.volume += 0.1f * Time.deltaTime;
     }
 }

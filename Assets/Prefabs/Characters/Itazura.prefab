@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5875337572229657108}
   - component: {fileID: -8092115160599937921}
+  - component: {fileID: -7834038661804370762}
   m_Layer: 0
   m_Name: Itazura
   m_TagString: Untagged
@@ -45,3 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera_Manager: {fileID: 0}
   Looker: {fileID: 0}
+--- !u!114 &-7834038661804370762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564406857767937971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd7ee0c5624c904dbcac66d63de1864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

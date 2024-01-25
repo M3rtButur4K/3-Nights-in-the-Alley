@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7620238939228288485}
   - component: {fileID: -4457245169993037100}
+  - component: {fileID: -9016360062145564161}
   m_Layer: 0
   m_Name: Adam
   m_TagString: Untagged
@@ -45,3 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera_Manager: {fileID: 0}
   Looker: {fileID: 0}
+--- !u!114 &-9016360062145564161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2693262658944100935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c755cc06a64d884aafaba5a3e54c87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

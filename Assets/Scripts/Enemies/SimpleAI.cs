@@ -30,6 +30,11 @@ public class SimpleAI : MonoBehaviour
     void Update()
     {
         DoWayPoints();
+        GameManager Manager = FindObjectOfType<GameManager>();
+        if (Manager.CurrentState == GameManager.GameState.IsBeaten)
+        {
+            Destroy(this.gameObject);
+        }
         //DoRayCast();
     }
 
@@ -60,7 +65,7 @@ public class SimpleAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Respawn"))
+        if (collision.collider.CompareTag("Respawn"))
         {
             WayPointNumber = Random.Range(0, WayPoints.Length);
         }

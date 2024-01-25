@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2861767292091167037}
   - component: {fileID: 5559399544654009}
+  - component: {fileID: -7912502745926475670}
   m_Layer: 0
   m_Name: Emma
   m_TagString: Untagged
@@ -45,3 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera_Manager: {fileID: 0}
   Looker: {fileID: 0}
+--- !u!114 &-7912502745926475670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923729131703055082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5095a1af3ceb1634aba993f179db3639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
