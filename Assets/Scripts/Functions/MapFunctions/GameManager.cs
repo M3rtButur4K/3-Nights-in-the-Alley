@@ -31,10 +31,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject VictoryPanel;
     [SerializeField] public GameObject GameOverPanel;
 
+    [Header("GameOverStuff")]
+    [SerializeField] AudioSource JumpscareSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        CurrentProgress.CurrentNight.SetupEnemies();
+        //CurrentProgress.CurrentNight.SetupEnemies();
     }
 
     // Update is called once per frame
@@ -85,14 +88,17 @@ public class GameManager : MonoBehaviour
         IngamePanel.SetActive(false);
         PausePanel.SetActive(false);
         VictoryPanel.SetActive(true);
-        CurrentProgress.NightNumber += 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
     }
     void IsDead()
     {
         IngamePanel.SetActive(false);
         PausePanel.SetActive(false);
         GameOverPanel.SetActive(true);
+        if(!JumpscareSound.isPlaying)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
     #endregion
 

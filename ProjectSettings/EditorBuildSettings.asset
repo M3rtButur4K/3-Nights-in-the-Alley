@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 551294cb889fec54598b402e550079f9
   - enabled: 1
+    path: Assets/Scenes/NightStartScene.unity
+    guid: 364c1091448e3214fa6cc7c8043d68ba
+  - enabled: 1
     path: Assets/Scenes/Level.unity
     guid: 501c2d24001a5d840b88fed7d7ca4325
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: e3a2d6eb0285369418168d02373a0a3a
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: 86504a8d251cdcc4ebb46da067131235
   m_configObjects: {}

@@ -32,9 +32,7 @@ public class Sardonyx : EnemyStats
     void Start()
     {
         Manager = FindObjectOfType<GameManager>();
-        AI_Agent = GetComponent<NavMeshAgent>();
-        CurrentWayPoint = WayPoints[WayPointNumber];
-        AI_Agent.SetDestination(CurrentWayPoint.position);
+        SetUpAgent();
         TimeUntilMove = (Random.Range(1, MaximumStandTime / AggressionLevel));
     }
 
@@ -63,6 +61,13 @@ public class Sardonyx : EnemyStats
     //        WayPointNumber = Random.Range(0, WayPoints.Length);
     //    }
     //}
+
+    void SetUpAgent()
+    {
+        AI_Agent = GetComponent<NavMeshAgent>();
+        CurrentWayPoint = WayPoints[WayPointNumber];
+        AI_Agent.SetDestination(CurrentWayPoint.position);
+    }
 
     void StandInPosition()
     {

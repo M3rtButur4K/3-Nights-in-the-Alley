@@ -62,6 +62,7 @@ public class Jono : EnemyStats
 
     void SliderFunction()
     {
+        ProgressSlider.gameObject.SetActive(true);
         ProgressSlider.value = RemainingTime;
         ProgressSlider.maxValue = TimeToKill;
     }

@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0724a854679bab438fdc19379e0a626, type: 3}
   m_Name: Night 3
   m_EditorClassIdentifier: 
-  DiscernNumber: 10
-  ItazuraNumber: 10
-  AdamNumber: 10
-  EmmaNumber: 10
-  NMS_Number: 10
-  SardonyxNumber: 10
-  RandomNumber: 10
-  JonoNumber: 10
+  DiscernNumber: 7
+  AdamNumber: 7
+  EmmaNumber: 7
+  NMS_Number: 7
+  SardonyxNumber: 7
+  RandomNumber: 7
+  JonoNumber: 7

@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0724a854679bab438fdc19379e0a626, type: 3}
   m_Name: Custom Mess
   m_EditorClassIdentifier: 
-  DiscernNumber: 0
-  ItazuraNumber: 0
+  DiscernNumber: 5
   AdamNumber: 0
   EmmaNumber: 0
-  NMS_Number: 0
+  NMS_Number: 5
   SardonyxNumber: 5
   RandomNumber: 5
-  JonoNumber: 0
+  JonoNumber: 5

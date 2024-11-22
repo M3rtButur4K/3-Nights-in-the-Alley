@@ -29,6 +29,7 @@ public class NemesisMetalSonic : EnemyStats
     // Update is called once per frame
     void Update()
     {
+        ProgressSlider.gameObject.SetActive(true);
         ProgressSlider.value = TestMusic.time;
 
         BreakerState();

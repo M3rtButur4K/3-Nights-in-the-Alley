@@ -28,6 +28,7 @@ public class CameraManager : MonoBehaviour
     [Header("Sound Effects")]
     [SerializeField] protected AudioSource CameraAudio;
     [SerializeField] protected AudioClip[] CameraSounds;
+    [SerializeField] protected GameObject SoundObject;
 
 
     void Start()
@@ -78,6 +79,7 @@ public class CameraManager : MonoBehaviour
         }
         CameraAudio.clip = CameraSounds[2];
         CameraAudio.Play();
+        Instantiate(SoundObject, CurrentCamera.transform.position, Quaternion.identity);
     }
 
     /// <summary>

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CurrentProgress
   m_EditorClassIdentifier: 
   Nights:
-  - {fileID: 11400000, guid: b4ce4dcae8b060b41b353df64617139a, type: 2}
+  - {fileID: 11400000, guid: 135561d37841f8c40a86db73c0407e51, type: 2}
   - {fileID: 11400000, guid: 1c187108a220be440a9742db1475a472, type: 2}
   - {fileID: 11400000, guid: 7daa87aeca0db8743823c52841c1b038, type: 2}
   SpecialNight: {fileID: 11400000, guid: 135561d37841f8c40a86db73c0407e51, type: 2}
-  CurrentNight: {fileID: 11400000, guid: 135561d37841f8c40a86db73c0407e51, type: 2}
+  CurrentNight: {fileID: 11400000, guid: b4ce4dcae8b060b41b353df64617139a, type: 2}
   NightNumber: 0

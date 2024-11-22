@@ -28,6 +28,7 @@ public class DoorFunction : MonoBehaviour
     [Header("Sound Effects")]
     [SerializeField] protected AudioSource DoorAudio;
     [SerializeField] protected AudioClip[] DoorSounds;
+    [SerializeField] protected GameObject SoundObject;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,7 @@ public class DoorFunction : MonoBehaviour
             DoorAudio.clip = DoorSounds[0];
             DoorAudio.Play();
             CurrentState = DoorState.Closed;
+            Instantiate(SoundObject, DoorObject.transform.position, Quaternion.identity);
         }
         else
         {
@@ -86,5 +88,6 @@ public class DoorFunction : MonoBehaviour
         DoorAudio.clip = DoorSounds[1];
         DoorAudio.Play();
         CurrentState = DoorState.Open;
+        Instantiate(SoundObject, DoorObject.transform.position, Quaternion.identity);
     }
 }

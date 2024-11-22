@@ -92,6 +92,9 @@ GameObject:
   - component: {fileID: 9129347502173432028}
   - component: {fileID: 7958975120762590042}
   - component: {fileID: -7005743424885447679}
+  - component: {fileID: 6978473073135398299}
+  - component: {fileID: 4383524763739306447}
+  - component: {fileID: 4483054877508866267}
   m_Layer: 0
   m_Name: Discern
   m_TagString: Untagged
@@ -108,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 3302832981778332837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 5803082420419717712}
   m_Father: {fileID: 0}
@@ -143,9 +146,63 @@ MonoBehaviour:
   IsActive: 0
   AggressionLevel: 0
   Manager: {fileID: 0}
-  AI_Agent: {fileID: 0}
   CurrentState: 0
   NoisePoints: []
+  IsChasingPlayer: 0
+  AI_Agent: {fileID: 4483054877508866267}
   WayPoints: []
   CurrentWayPoint: {fileID: 0}
   WayPointNumber: 0
+  Character: {fileID: 7958975120762590042}
+  RayDistance: 10
+--- !u!54 &6978473073135398299
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3302832981778332837}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &4383524763739306447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3302832981778332837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!195 &4483054877508866267
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3302832981778332837}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 10
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

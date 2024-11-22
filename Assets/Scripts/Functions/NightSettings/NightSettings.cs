@@ -8,13 +8,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Night", menuName = "NightSettings", order = 1)]
 public class NightSettings : ScriptableObject
 {
-    CreateAssetMenuAttribute A;
     [Header("Enemies")]
     protected Discern E_Discern;
     public float DiscernNumber;
 
-    protected Itazura E_Itazura;
-    public float ItazuraNumber;
+    //protected Itazura E_Itazura;
+    //public float ItazuraNumber;
     
     protected Adam E_Adam;
     public float AdamNumber;
@@ -56,15 +55,15 @@ public class NightSettings : ScriptableObject
             E_Discern.IsActive = false;
         }
     }
-    void SetUpItazura()
-    {
-        E_Itazura = FindObjectOfType<Itazura>();
-        E_Itazura.AggressionLevel = ItazuraNumber;
-        if(E_Itazura.AggressionLevel <= 0)
-        {
-            E_Itazura.IsActive = false;
-        }
-    }
+    //void SetUpItazura()
+    //{
+    //    E_Itazura = FindObjectOfType<Itazura>();
+    //    E_Itazura.AggressionLevel = ItazuraNumber;
+    //    if(E_Itazura.AggressionLevel <= 0)
+    //    {
+    //        E_Itazura.IsActive = false;
+    //    }
+    //}
     void SetUpAdam()
     {
         E_Adam = FindObjectOfType<Adam>();
